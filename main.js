@@ -56,8 +56,22 @@ const posts = [
     }
 ];
 
+const container= document.getElementById('container');
 
 for(let i = 0; i < posts.length; i++){
-    const everyPost= posts[i];
+    const everyPosts= posts[i];
     console.log(posts[i]);
+
+    const post= document.createElement("div");
+    post.classList.add('post');
+    container.append(post);
+
+    const postHeader=document.createElement("div")
+    postHeader.classList.add('post__header')
+    post.append(postHeader);
+
+    const meta= document.createElement("div");
+    meta.classList.add("post-meta");
+    postHeader.append(meta);
+
 }
