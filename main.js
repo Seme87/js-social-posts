@@ -74,4 +74,13 @@ for(let i = 0; i < posts.length; i++){
     meta.classList.add("post-meta");
     postHeader.append(meta);
 
+    const metaIcon= document.createElement("div");
+    metaIcon.classList.add("post-meta__icon");
+    meta.append(metaIcon);
+
+    const imgMetaIcon= document.createElement("img");
+    imgMetaIcon.classList.add("profile-pic");
+    imgMetaIcon.src= posts.media;
+    metaIcon.append(imgMetaIcon);
+
 }
