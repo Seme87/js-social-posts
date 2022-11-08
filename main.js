@@ -80,7 +80,16 @@ for(let i = 0; i < posts.length; i++){
 
     const imgMetaIcon= document.createElement("img");
     imgMetaIcon.classList.add("profile-pic");
-    imgMetaIcon.src= posts.media;
+    imgMetaIcon.src= posts[i].media;
     metaIcon.append(imgMetaIcon);
+
+    const metaData= document.createElement("div");
+    metaData.classList.add("post-meta__data");
+    meta.append(metaData);
+
+    const metaAuthor = document.createElement("div");
+    metaAuthor.classList.add("post-meta__author");
+    metaAuthor.innerHTML= post[i].author.name;
+    metaData.append(metaAuthor);
 
 }
