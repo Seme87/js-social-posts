@@ -107,7 +107,34 @@ for(let i = 0; i < posts.length; i++){
     post.append(imgContainerPosts);
 
     const imgPosts= document.createElement("img");
-    imgPosts.src= posts[i].author.image;
+    if( imgPosts.src= posts[i].author.image === null){
+        imgPosts.src= "https://via.placeholder.com/300"
+    }else{
+        imgPosts.src= posts[i].author.image;
+    }
     post.append(imgPosts);
+
+    const footer= document.createElement("div");
+    footer.classList.add("post__footer");
+    post.append(footer);
+
+    const likes= document.createElement("div");
+    likes.classList.add("likes js-likes")
+    footer.append(likes);
+
+    const likesCta= document.createElement("div");
+    likesCta.classList.add("likes__cta");
+    likes.append(likesCta);
+
+    const btn= document.createElement("a");
+    btn.classList.add("like-button  js-like-button");
+    btn.setAttribute("href", "#");
+    btn.setAttribute("data-postid", "post[i].id" );
+    likesCta.append(btn);
+
+    const btnIcon= document.createElement("i");
+    btnIcon.classList.add("like-button__icon fas fa-thumbs-up");
+    btn.setAttribute("aria-hidden", "true")
+    btn.append(btnIcon);
 
 }
