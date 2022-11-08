@@ -89,7 +89,25 @@ for(let i = 0; i < posts.length; i++){
 
     const metaAuthor = document.createElement("div");
     metaAuthor.classList.add("post-meta__author");
-    metaAuthor.innerHTML= post[i].author.name;
+    metaAuthor.innerHTML= posts[i].author.name;
     metaData.append(metaAuthor);
+
+    const metaTime= document.createElement("div");
+    metaTime.classList.add("post-meta__time");
+    metaTime.innerHTML=posts[i].created
+    metaData.append(metaTime);
+
+    const text= document.createElement("div");
+    text.classList.add("post__text");
+    text.innerHTML=posts[i].content;
+    post.append(text);
+
+    const imgContainerPosts=document.createElement("div");
+    imgContainerPosts.classList.add("post__image");
+    post.append(imgContainerPosts);
+
+    const imgPosts= document.createElement("img");
+    imgPosts.src= posts[i].author.image;
+    post.append(imgPosts);
 
 }
